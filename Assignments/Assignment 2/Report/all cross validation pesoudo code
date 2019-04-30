@@ -1,0 +1,80 @@
+\begin{algorithm}[H]
+\caption{Euclidean Distance Function}
+\begin{algorithmic}[1]
+\REQUIRE TrainingData, Kfolds
+\STATE   $ NumofselectedFeatures \gets Dimensionality_Reduction_step$
+\STATE    $ n_neighbors=[3,5,7,...,30]$
+
+ \STATE    Split Training data into Kfolds 
+  \FOR { iteration \textbf{in} range(Kfold) }  
+  
+     \STATE     $ X_train, X_test, y_train, y_test \gets SplitData(foldDict,iteration)$ 
+       \FOR { $ P \textbf{in} range(NumofselectedFeatures)$ } 
+       
+          \STATE  $ NewX_train \gets X_train[:,0:P+1]$ 
+           \STATE $ NewX_test \gets X_test[:,0:P+1] $
+            
+            \FOR { $ P \textbf{in} n_neighbors$  } 
+         
+               \STATE $ knn \gets KNeighborsClassifier(n_neighbors=K)$ 
+               \STATE $ knn.fit(NewX_train, y_train)$ 
+               \STATE $ PredictedOutput \gets knn.predict(NewX_test)$ 
+               
+                \STATE $ probs \gets knn.predict_proba(NewX_test)$ 
+                
+               \STATE $ probs \gets probs[:, 1]$  \COMMENT{use probabilities for class=1}
+             
+                \STATE $ aucValue \gets roc_auc_score(y_test, probs)$ 
+               
+               
+                \STATE $ row_index \gets n_neighbors.index(K)$ 
+               \STATE $ col_index \gets P $ 
+               \STATE $ ResultGrid[row_index,col_index] \gets ResultGrid [row_index,col_index]+aucValue$ 
+\ENDFOR
+\ENDFOR
+\ENDFOR
+       
+    
+     \STATE $ ResultGrid \gets ResultGrid/ Kfold $  \COMMENT{   calculating average AUC}
+   
+   
+    
+     \COMMENT{ Find top 3 AUC values and their index}
+     \STATE $ top_n = 2 $
+     \STATE $topbestmodels  \gets [[-1,-1,-1], [-1,-1,-1], [-1,-1,-1]]$
+     \FOR { $K \textbf{in} range(3)$ } 
+    \FOR { $i, row \textbf{in} range(ResultGrid) $} 
+           \STATE  $top = row.nlargest(top_n).index$
+           \FOR {$topCol \textbf{in} top$}
+           \IF{$ResultGrid[i, topCol] > topbestmodels[k][0]$}
+   				 \STATE$  topbestmodels[k][0]=ResultGrid [i, topCol]$
+                
+                    
+                   \STATE $ topbestmodels[k][1]=i $
+                   \STATE $ topbestmodels[k][2]=topCol  $          
+            \STATE $ ResultGrid.loc[topbestmodels[k][1], topbestmodels[k][2]]=np.NAN $ 
+            \ENDIF
+            \ENDFOR
+\ENDFOR
+\ENDFOR
+
+     \COMMENT{  Find worest 2 models }
+    \STATE $lowest_n=2$
+   \STATE $Worestmodels = [[1000,-1,-1], [1000,-1,-1]]$
+    \FOR {$K \textbf{in} range (2)$}
+     \FOR { $i, row \textbf{in} range(ResultGrid)$ }    
+             \STATE  $lowest = row.nsmallest(lowest_n)$
+            \FOR {  $lowestCol \textbf{in} lowest$}
+                 \IF{ $ResultGrid.loc[i, lowestCol] <Worestmodels[k][0])$}
+                    \STATE $Worestmodels[k][0]=ResultGrid[i, lowestCol]$
+                   \STATE $Worestmodels[k][1]=i$
+                   \STATE  $Worestmodels[k][2]=lowestCol   $         
+            \STATE $ResultGrid.loc[Worestmodels[k][1], Worestmodels[k][2]]=1000 $
+             \ENDIF
+\ENDFOR
+\ENDFOR
+\ENDFOR
+    \STATE $return n_neighbors,topbestmodels,Worestmodels,X_train, X_test, y_train, y_test$
+
+\end{algorithmic}
+\end{algorithm}

@@ -1,0 +1,10 @@
+ \begin{enumerate}
+	\item Shuffle the data using  $ trainingdata.sample()$ function from sklearn Library 
+	\item Split the data using $ trainTestSplit$ function in the sklearn Library and make the testing part equal to $40 \%$  of the total training data.
+	\item Calculate average accuracy  by  comparing actual data with the predicated data, and then applying the formula in (1)
+	\begin{equation}
+	Accuracy = \frac{CorrectPredicted}{AllOutputs}
+	\end{equation} 
+	\item  Generate a report with Precision and Recall using the $classificationReport$ function from the sklearn Library
+	\item Repeat all pervious steps for Kfold = 5
+ \end{enumerate}

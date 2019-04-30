@@ -1,0 +1,255 @@
+
+if ( AUCPR_RF > AUCPR_SVM):
+    if ( AUCPR_RF>AUCPR_LOGR):
+        #Store RF
+        Predictions_RF.to_csv('output.tsv',sep='\t')
+    elif ( AUCPR_LOGR >AUCPR_SVM):
+        #store logR
+        Predictions_LOGR.to_csv('output.tsv',sep='\t')
+    else:
+            #store svm
+            Predictions_SVM.to_csv('output.tsv',sep='\t')
+ elif ( AUCPR_SVM >AUCPR_LOGR):
+     #store svm
+     Predictions_SVM.to_csv('output.tsv',sep='\t')
+     elif ( AUCPR_LOGR >AUCPR_RF):
+         #stor log 
+         Predictions_LOGR.to_csv('output.tsv',sep='\t')
+         else:
+             #store rf
+              Predictions_RF.to_csv('output.tsv',sep='\t')  
+
+
+
+
+
+def FeatureSelection(trainingdata):
+    #print (trainingdata.shape)
+    #input("shape")
+    ### Find correlation features ##
+   #  corr_matrix = trainingdata.corr().abs() 
+   #  upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(np.bool))
+   #  # Find index of feature columns with correlation greater than 0.65
+   #  to_drop = [column for column in upper.columns if any(upper[column] > 0.85)] 
+   #  trainingdata.drop(trainingdata.columns[to_drop], axis=1)
+   #  #trainingdata=trainingdata.drop(columns=to_drop)
+   #  
+   # # print (trainingdata.shape)
+    #================================drop low variance features===================
+    #sel = VarianceThreshold(threshold=0.00009) # 71
+    #sel = VarianceThreshold(threshold=0.0002) #  55
+    sel = VarianceThreshold(threshold=0.0000009) 
+    SelectedFeatures=sel.fit_transform(trainingdata)
+    #print (SelectedFeatures.shape)
+    #input("after variance")
+    trainingdata=pd.DataFrame(SelectedFeatures)
+    #print (trainingdata.shape)
+    return trainingdata
+
+
+#=============================================================
+
+def FeatureSelection_RandomForest2 (X_train,X_test,y_train,testingdata,NumOfImportantFeatures):  
+    model = RandomForestClassifier()
+    model.fit(X_train,y_train)
+    
+    RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+  
+    #print (model.feature_importances_.argsort()[::-1][:NumOfImportantFeatures])
+    
+    
+    importances = model.feature_importances_
+    # Sort feature importances in descending order
+    indices = np.argsort(importances)[::-1]
+   
+    print ( indices)
+    print ( indices.shape)
+    print (trainingdata.shape)
+    
+    X_train =X_train.loc[:,indices]
+    input( "stop")
+    X_test =X_test.loc[:,indices]
+    print(type(X_test))
+    print(type(testingdata))
+    print(testingdata.shape)
+  
+    
+    #testingdata=testingdata.loc[:,2]
+   
+    #NewX = selectKImportance(model,trainingdata,2)
+    print(X_train.shape)
+    
+
+    return X_train,X_test,testingdata         ####Note number of rows decress ???? = 2289 inseated of 3816 
+
+
+
+#================RandomForest=================    
+def RandomForest (trainingdata,testingdata ):
+    # Feature Selection
+    
+  
+    trainingdata=FeatureSelection(trainingdata)
+ 
+    X_train, X_test, y_train, y_test = train_test_split(trainingdata, trainingdata.iloc[:,-1], test_size=0.4, random_state=0,stratify=trainingdata.iloc[:,-1])
+ 
+    NumOfImportantFeatures=2
+    X_train,X_test, testingdata= FeatureSelection_RandomForest(X_train,X_test,y_train ,testingdata, NumOfImportantFeatures)
+ 
+    
+    
+    #### TUNE RANDOM FOREST 
+    
+    # set all possible combinations 
+    
+    # Number of trees in random forest
+    n_estimators = [int(x) for x in np.linspace(start = 200, stop = 2000, num = 10)]
+    # Number of features to consider at every split
+    max_features = ['auto', 'log2']    # NONE like bagging , 'None's
+    # Maximum number of levels in tree
+    max_depth = [int(x) for x in np.linspace(10, 110, num = 11)]
+    max_depth.append(None)
+    # Minimum number of samples required to split a node
+    min_samples_split = [2, 5, 10]
+    # Minimum number of samples required at each leaf node
+    min_samples_leaf = [1, 2, 4]
+    # Method of selecting samples for training each tree
+    bootstrap = [True]
+    
+    # Create the random grid
+    random_grid = {'n_estimators': n_estimators,
+                'max_features': max_features,
+                'max_depth': max_depth,
+                'min_samples_split': min_samples_split,
+                'min_samples_leaf': min_samples_leaf,
+                'bootstrap': bootstrap}
+    
+    pprint(random_grid)
+    
+    ########### calculate forest grid
+    
+    rf =RandomForestClassifier()
+    # Random search of parameters, using 3 fold cross validation, 
+    # search across 100 different combinations, and use all available cores
+    rf_random = RandomizedSearchCV(estimator = rf, param_distributions = random_grid, n_iter = 1, cv = 5, verbose=2, random_state=42, n_jobs = -1)
+#X_train,X_test,y_train
+    # Fit the random search model
+    rf_random.fit(X_train,y_train)
+    predictions = rf_random.predict(X_test)
+    
+    print ( X_test)
+    probs = rf_random.predict_proba(X_test)
+    probs = probs[:, 1]
+    ap = average_precision_score(y_test, probs)
+    pprint(rf_random.best_params_)
+    print ( ap)
+   #  errors = abs(predictions - y_test)
+   #  mape = 100 * np.mean(errors / y_test)
+   
+   #  accuracy = 100 - mape
+   #  print('Model Performance')
+   #  print('Average Error: {:0.4f}', accuracy)
+   #  fpr, tpr, thresholds = metrics.roc_curve(y_test, predictions, pos_label=1) 
+   #print(metrics.auc(fpr, tpr))
+    
+   # pyplot.plot(fpr, tpr, marker='.',label="random forest")
+    
+   # 
+    ###############################
+    
+    #run real test data :
+    
+    
+    precision, recall, thresholds = precision_recall_curve(y_test, predictions)
+   
+    pyplot.plot(recall, precision, marker='>',label="RandomForest")
+        
+       
+    pyplot.legend(loc='upper left')
+       
+    pyplot.title("Precision-Recall")    
+    pyplot.xlabel("Recall")
+    pyplot.ylabel("Precision")    
+    #pyplot.plot([0, 1], [0, 1], linestyle='--')
+    
+    return
+#=======================LogissticRegression======================================    
+def LogissticRegression (trainingdata,testingdata ): 
+        
+    print ("before"+ str( trainingdata.shape))
+    trainingdata=FeatureSelection(trainingdata)
+    print ("After"+ str( trainingdata.shape)) 
+          
+    X_train, X_test, y_train, y_test = train_test_split(trainingdata, trainingdata.iloc[:,-1], test_size=0.4, random_state=0)  
+   
+    NumOfImportantFeatures=2
+    X_train,X_test, testingdata= FeatureSelection_RandomForest(X_train,X_test,y_train ,testingdata, NumOfImportantFeatures)
+    #*****************************************************************  
+    print("LogissticRegression")  
+    print(trainingdata.shape)
+    log_class = LogisticRegression()
+    scores = cross_val_score(log_class, trainingdata, trainingdata.iloc[:,-1], cv=5, scoring='average_precision')                           
+    print ( scores)
+    
+    
+    log_class.fit(X_train,y_train)
+    predictions = log_class.predict(X_test)
+    probs=log_class.predict_proba(X_test)
+    probs = probs[:, 1]
+    ap = average_precision_score(y_test, probs) 
+    print("average_precision_score:")
+    print (ap) 
+    precision, recall, thresholds = precision_recall_curve(y_test, predictions)
+   
+    pyplot.plot(recall, precision, marker='d',label="Logisstic Regression")
+        
+       
+    pyplot.legend(loc='upper left')
+       
+    pyplot.title("Precision-Recall")    
+    pyplot.xlabel("Recall")
+    pyplot.ylabel("Precision")    
+    
+    return
+#=======================SVM======================================    
+def SVM  (trainingdata,testingdata ):
+    
+   
+    trainingdata=FeatureSelection(trainingdata)
+    X_train, X_test, y_train, y_test = train_test_split(trainingdata, trainingdata.iloc[:,-1], test_size=0.4, random_state=0)  
+    NumOfImportantFeatures=2
+    X_train,X_test, testingdata= FeatureSelection_RandomForest(X_train,X_test,y_train ,testingdata, NumOfImportantFeatures)
+    
+    
+    clf = svm.SVC(probability=True,kernel='linear', C=1)
+  
+    scores = cross_val_score(clf, trainingdata, trainingdata.iloc[:,-1], cv=5, scoring='average_precision')                           
+    print ( scores)
+    
+    clf.fit(X_train,y_train)
+    predictions = clf.predict(X_test)
+    
+    probs = clf.predict_proba(X_test)
+    probs = probs[:, 1]
+    ap = average_precision_score(y_test, probs) 
+    print("average_precision_score:")
+    print (ap) 
+    
+    ap = average_precision_score(y_test, predictions)  
+    precision, recall, thresholds = precision_recall_curve(y_test, predictions)
+   
+    pyplot.plot(recall, precision, marker='o',label="SVM")
+        
+       
+    pyplot.legend(loc='upper left')
+       
+    pyplot.title("Precision-Recall")    
+    pyplot.xlabel("Recall")
+    pyplot.ylabel("Precision")    
+ 
+    return   

@@ -1,0 +1,17 @@
+
+
+1. Make CVFolds = 5 or 10
+2. for i from 0 to CVFolds
+    Select LearningData
+    Select TestingData
+    *** Is this where we select the features???
+    For f from 1 to TotalFeatures #f=features
+        CurrentFeatures = (feature[0] to feature[f])
+        LearningData = LearningData.Rows(features from 0 to f)
+        TestingData = TestingData.Rows(features from 0 to f)
+        For k from 3 to 30 in increments of 3
+             to Stats append Run KNN using k, CurrentFeatures
+             #Stats needs to store, value of k, selected features, accuracy, TruePositive(TP), FalsePositive(FP), FalseNegative(FN), TrueNegative(TN)
+             to Stats append CalculatePerformanceMetric
+                #CalculatePerformanceMetric will use TP,FP,FN,TN to add the following columns: Accuracy, TPR, FPR, Precision, and the NPV
+             

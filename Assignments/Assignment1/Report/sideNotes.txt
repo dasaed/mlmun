@@ -1,0 +1,28 @@
+
+ \subsection{Normalization()}
+\begin{algorithm}[H]
+\caption{Normalize the data}
+\begin{algorithmic}
+\REQUIRE Data
+    \FOR { column \textbf{in} Data }
+    	\STATE $ minvalue \gets Data[column].min()$
+    	\STATE $ maxvalue \gets Data[column].max()$
+    	\STATE $ Data[column] \gets (Data[column] - minvalue) / (maxvalue - minvalue) $
+	\ENDFOR  
+	\STATE  return Data
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{adjustbox}{angle=90}
+%\begin{table}[]
+\begin{tabular}{llllllll}
+                                & \multicolumn{6}{c}{\textbf{Class}}                                                                                                                                                                                                                                                                                                                                                                                                                                    &                         \\
+\multicolumn{1}{c}{K=3}         & \textbf{1}                                                               & \textbf{2}                                                               & \textbf{3}                                                               & \textbf{5}                                                                 & \textbf{6}                                                                 & \textbf{7}                                                                 & \textbf{Accurcy} \\
+Classical KNN                   & \begin{tabular}[c]{@{}l@{}}Pre = 79\%\\ Recall = 85\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 88\%\\ Recall = 90\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 67\%\\ Recall = 40\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 40\%\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 80\%\\ Recall = 80\%\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 91\%\end{tabular}  & 85.00\%                 \\
+KNN Weighted           & \begin{tabular}[c]{@{}l@{}}Pre =75\%\\ Recall = 81\%\end{tabular}  & Pre = 93\%Recall = 83\%                                            & \begin{tabular}[c]{@{}l@{}}Pre = 57\%\\ Recall = 67\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 91\%\\ Recall = 91\%\end{tabular}   & 84.00\%                 \\
+Normalized KNN                  & \begin{tabular}[c]{@{}l@{}}Pre = 92\%\\ Recall = 89\%\end{tabular} & Pre = 91\%Recall = 94\%                                            & \begin{tabular}[c]{@{}l@{}}Pre = 60\%\\ Recall = 60\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \textbf{91.00\%}        \\
+Normalize KNN Weighted  & \begin{tabular}[c]{@{}l@{}}Pre = 71\%\\ Recall = 87\%\end{tabular} & Pre = 89\%Recall = 74\%                                            & \begin{tabular}[c]{@{}l@{}}Pre = 60\%\\ Recall = 43\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 75\%\\ Recall = 100\%\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 50\%\\ Recall = 67\%\end{tabular}   & Pre =100 \%Recall = 100\%                                            & 79.00\%                
+\end{tabular}
+%\end{table}
+\end{adjustbox}

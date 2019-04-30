@@ -1,0 +1,2 @@
+Machine learning and swarm robotics are arguably the perfect ingredients for any futuristic sci-fi movie. However, these technologies are not just a piece of fiction, but legitimate and interesting areas of research in the academic and scientific societies. This paper, discusses an intersection between the two fields by providing a historic background of the fields, followed by some examples and algorithms currently being used, and finally hinting at how these technologies might change the near and far future of humanity.
+

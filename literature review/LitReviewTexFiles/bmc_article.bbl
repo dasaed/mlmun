@@ -1,0 +1,1290 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{47}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{James}
+\begin{bbook}
+\bauthor{\bsnm{Gareth}, \binits{J.}},
+\bauthor{\bsnm{Witten}, \binits{D.}},
+\bauthor{\bsnm{Hastie}, \binits{T.}},
+\bauthor{\bsnm{Tibshirani}, \binits{R.}}:
+\bbtitle{An Introduction to Statistical Learning with Applications in R}.
+\bsertitle{Springer Texts in Statistics, 103},
+(\byear{2013})
+\end{bbook}
+\endbibitem
+
+%%% 2
+\bibitem{Bayindir}
+\begin{botherref}
+\oauthor{\bsnm{Bayindir}, \binits{L.}}:
+{A review of swarm robotics tasks}.
+Neurocomputing,
+292--321
+(2015).
+doi:\doiurl{10.1016/j.neucom.2015.05.116}
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem{Vehlken}
+\begin{barticle}
+\bauthor{\bsnm{Sebastian}, \binits{V.}}:
+\batitle{{Swarm Robotics , or ' The Smartness of a bunch of cheap dumb things
+  '}}.
+\bjtitle{Next Generation Building 3}
+\bvolume{1},
+\bfpage{487}--\blpage{490}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{Mohan}
+\begin{bchapter}
+\bauthor{\bsnm{Mohan}, \binits{Y.}},
+\bauthor{\bsnm{Ponnambalam}, \binits{S.}}:
+\bctitle{An extensive review of research in swarm robotics}.
+In: \bbtitle{2009 World Congress on Nature \& Biologically Inspired Computing
+  (NaBIC)},
+pp. \bfpage{140}--\blpage{145}
+(\byear{2009}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
+%%% 5
+\bibitem{TEDx}
+\begin{botherref}
+\oauthor{\bsnm{{TEDx}}}:
+{Swarm robotics -- from local rules to global behaviors | Magnus Egerstedt |
+  TEDxEmory}
+(2014).
+\url{https://www.youtube.com/watch?v=ULKyXnQ9xWA}
+Accessed 2019-02-18
+\end{botherref}
+\endbibitem
+
+%%% 6
+\bibitem{Webb}
+\begin{barticle}
+\bauthor{\bsnm{Webb}, \binits{B.}}:
+\batitle{Swarm intelligence: From natural to artificial systems}.
+\bjtitle{Connection Science}
+\bvolume{14}(\bissue{2}),
+\bfpage{163}--\blpage{164}
+(\byear{2002})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{Couceiro2014}
+\begin{barticle}
+\bauthor{\bsnm{Couceiro}, \binits{M.S.}},
+\bauthor{\bsnm{Vargas}, \binits{P.A.}},
+\bauthor{\bsnm{Rocha}, \binits{R.P.}},
+\bauthor{\bsnm{Ferreira}, \binits{N.M.F.}}:
+\batitle{Benchmark of swarm robotics distributed techniques in a search task}.
+\bjtitle{Robotics and Autonomous Systems}
+\bvolume{62}(\bissue{2}),
+\bfpage{200}--\blpage{213}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{Nedjah}
+\begin{botherref}
+\oauthor{\bsnm{Nedjah}, \binits{N.}},
+\oauthor{\bparticle{de} \bsnm{{Macedo Mourelle}}, \binits{L.}}:
+{Distributed learning algorithms for swarm robotics}
+(2015).
+\url{http://dx.doi.org/10.1016/j.neucom.2015.06.085}
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem{TEDx2016}
+\begin{botherref}
+\oauthor{\bsnm{TEDx2016}}:
+{Taming the swarm - Collective Artificial Intelligence | Radhika Nagpal |
+  TEDxBermuda - YouTube}.
+\url{https://www.youtube.com/watch?v=LHgVR0lzFJc}
+Accessed 2019-03-16
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem{SHoR}
+\begin{botherref}
+\oauthor{\bsnm{Siciliano}, \binits{B.}},
+\oauthor{\bsnm{Khatib}, \binits{O.}}:
+Springer handbook of robotics, 2nd edition
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem{Parker}
+\begin{barticle}
+\bauthor{\bsnm{Parker}, \binits{L.E.}}:
+\batitle{Distributed intelligence: overview of the field and its application in
+  multi-robot systems}.
+\bjtitle{JoPha: Journal of Physical Agents}
+\bvolume{2}(\bissue{1}),
+\bfpage{5}--\blpage{14}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{Bakhshipour}
+\begin{barticle}
+\bauthor{\bsnm{Bakhshipour}, \binits{M.}},
+\bauthor{\bsnm{Jabbari~Ghadi}, \binits{M.}},
+\bauthor{\bsnm{Namdari}, \binits{F.}}:
+\batitle{Swarm robotics search and rescue: A novel artificial
+  intelligence-inspired optimization approach}.
+\bjtitle{Applied Soft Computing}
+\bvolume{57},
+\bfpage{708}--\blpage{726}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{Brambilla}
+\begin{barticle}
+\bauthor{\bsnm{Brambilla}, \binits{M.}},
+\bauthor{\bsnm{Ferrante}, \binits{E.}},
+\bauthor{\bsnm{Birattari}, \binits{M.}},
+\bauthor{\bsnm{Dorigo}, \binits{M.}}:
+\batitle{{Swarm robotics: A review from the swarm engineering perspective}}.
+\bjtitle{Swarm Intelligence}
+\bvolume{7}(\bissue{1}),
+\bfpage{1}--\blpage{41}
+(\byear{2013}).
+doi:\doiurl{10.1007/s11721-012-0075-2}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{Couceiro}
+\begin{bchapter}
+\bauthor{\bsnm{Couceiro}, \binits{M.}}:
+\bctitle{An overview of swarm robotics for search and rescue applications}.
+In: \bbtitle{Artificial Intelligence},
+pp. \bfpage{1522}--\blpage{1561}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 15
+\bibitem{Henrich}
+\begin{bbook}
+\bauthor{\bsnm{Henrich}, \binits{N.}}:
+\bbtitle{Why Humans Cooperate : a Cultural and Evolutionary Explanation}.
+\bsertitle{Evolution and cognition}.
+\bpublisher{Oxford University Press},
+\blocation{Oxford, Toronto}
+(\byear{2007})
+\end{bbook}
+\endbibitem
+
+%%% 16
+\bibitem{Mitchell}
+\begin{bbook}
+\bauthor{\bsnm{Mitchell}, \binits{T.M.T.M.}}:
+\bbtitle{Machine Learning}.
+\bsertitle{McGraw-Hill series in computer science}.
+\bpublisher{McGraw-Hill},
+\blocation{New York}
+(\byear{1997})
+\end{bbook}
+\endbibitem
+
+%%% 17
+\bibitem{Alpaydin}
+\begin{bbook}
+\bauthor{\bsnm{Alpaydin}, \binits{E.}}:
+\bbtitle{Introduction to Machine Learning},
+\bedition{Third edition..} edn.
+\bsertitle{Adaptive computation and machine learning}.
+\bpublisher{MIT Press},
+\blocation{Cambridge, Mass.}
+(\byear{2014})
+\end{bbook}
+\endbibitem
+
+%%% 18
+\bibitem{Mohammed}
+\begin{bbook}
+\bauthor{\bsnm{Mohammed}, \binits{M.}}:
+\bbtitle{Machine Learning : Algorithms and Applications},
+(\byear{2017})
+\end{bbook}
+\endbibitem
+
+%%% 19
+\bibitem{Corea}
+\begin{bbook}
+\bauthor{\bsnm{Corea}, \binits{F.}}:
+\bbtitle{An Introduction to Data Everything You Need to Know About AI, Big Data
+  and Data Science}.
+\bsertitle{Studies in Big Data, 50},
+(\byear{2019})
+\end{bbook}
+\endbibitem
+
+%%% 20
+\bibitem{Iima2}
+\begin{bchapter}
+\bauthor{\bsnm{Iima}, \binits{H.}},
+\bauthor{\bsnm{Kuroe}, \binits{Y.}}:
+\bctitle{Swarm reinforcement learning method for a multi-robot formation
+  problem}.
+In: \bbtitle{2013 IEEE International Conference on Systems, Man, and
+  Cybernetics},
+pp. \bfpage{2298}--\blpage{2303}
+(\byear{2013}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem{Hastie}
+\begin{bbook}
+\bauthor{\bsnm{Hastie}, \binits{T.}}:
+\bbtitle{The Elements of Statistical Learning Data Mining, Inference, and
+  Prediction},
+\bedition{Second edition..} edn.
+\bsertitle{Springer Series in Statistics},
+(\byear{2009})
+\end{bbook}
+\endbibitem
+
+%%% 22
+\bibitem{CHF}
+\begin{botherref}
+\oauthor{\bsnm{{Chicago Humanities Festival}}}:
+{Swarm Robotics: Invasion of the Robot Ants - YouTube}
+(2013).
+\url{https://www.youtube.com/watch?v=BeUT{\_}AL6t4A{\&}t=418s}
+Accessed 2019-03-04
+\end{botherref}
+\endbibitem
+
+%%% 23
+\bibitem{Welling}
+\begin{bbook}
+\bauthor{\bsnm{Welling}, \binits{M.}}:
+\bbtitle{A First Encounter with Machine Learning}.
+\bpublisher{University of California Irvine},
+\blocation{Irvine, CA 92697, USA}
+(\byear{2011})
+\end{bbook}
+\endbibitem
+
+%%% 24
+\bibitem{Sundblad}
+\begin{botherref}
+\oauthor{\bsnm{Sundblad}, \binits{W.}}:
+{Data Is The Foundation For Artificial Intelligence And Machine Learning}
+(2019).
+\url{https://www.forbes.com/sites/willemsundbladeurope/2018/10/18/data-is-the-foundation-for-artificial-intelligence-and-machine-learning/?fbclid=IwAR1i3wt-4zSgMEmrsS32071KhRD-6thBftdtZdj7b1KmVN{\_}Sry21Mr2BWOY{\#}138a98db51b4}
+Accessed 2019-03-25
+\end{botherref}
+\endbibitem
+
+%%% 25
+\bibitem{Kumar2019}
+\begin{botherref}
+\oauthor{\bsnm{{Vijay Kumar}}}:
+{Kumar Robotics}
+(2019).
+\url{https://www.kumarrobotics.org/research/}
+Accessed 2019-03-24
+\end{botherref}
+\endbibitem
+
+%%% 26
+\bibitem{TED}
+\begin{botherref}
+\oauthor{\bsnm{TED}}:
+{The Future of Flying Robots | Vijay Kumar | TED Talks - YouTube}
+(2015).
+\url{https://www.youtube.com/watch?v=ge3--1hOm1s}
+Accessed 2019-02-25
+\end{botherref}
+\endbibitem
+
+%%% 27
+\bibitem{AMNH}
+\begin{botherref}
+\oauthor{\bsnm{{American Museum of Natural History}}}:
+{Swarms of Aerial Robots - AMNH SciCafe - YouTube}
+(2016).
+\url{https://www.youtube.com/watch?v=mUeyfLIGtLQ{\&}t=636s}
+Accessed 2019-02-25
+\end{botherref}
+\endbibitem
+
+%%% 28
+\bibitem{Kumar2018}
+\begin{botherref}
+\oauthor{\bsnm{Liu}, \binits{X.}},
+\oauthor{\bsnm{Chen}, \binits{S.W.}},
+\oauthor{\bsnm{Aditya}, \binits{S.}},
+\oauthor{\bsnm{Sivakumar}, \binits{N.}},
+\oauthor{\bsnm{Dcunha}, \binits{S.}},
+\oauthor{\bsnm{Qu}, \binits{C.}},
+\oauthor{\bsnm{Taylor}, \binits{C.J.}},
+\oauthor{\bsnm{Das}, \binits{J.}},
+\oauthor{\bsnm{Kumar}, \binits{V.}}:
+Robust fruit counting: Combining deep learning, tracking, and structure from
+  motion
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 29
+\bibitem{Iima}
+\begin{bchapter}
+\bauthor{\bsnm{Iima}, \binits{H.}},
+\bauthor{\bsnm{Kuroe}, \binits{Y.}}:
+\bctitle{Swarm reinforcement learning methods improving certainty of learning
+  for a multi-robot formation problem}.
+In: \bbtitle{2015 IEEE Congress on Evolutionary Computation (CEC)},
+pp. \bfpage{3026}--\blpage{3033}
+(\byear{2015}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
+%%% 30
+\bibitem{Zheng2017}
+\begin{botherref}
+\oauthor{\bsnm{Zheng}, \binits{L.}},
+\oauthor{\bsnm{Yang}, \binits{J.}},
+\oauthor{\bsnm{Cai}, \binits{H.}},
+\oauthor{\bsnm{Zhang}, \binits{W.}},
+\oauthor{\bsnm{Wang}, \binits{J.}},
+\oauthor{\bsnm{Yu}, \binits{Y.}}:
+Magent: A many-agent reinforcement learning platform for artificial collective
+  intelligence
+(2017)
+\end{botherref}
+\endbibitem
+
+%%% 31
+\bibitem{Max}
+\begin{botherref}
+\oauthor{\bsnm{Huttenrauch}, \binits{M.}},
+\oauthor{\bsnm{SoSic}, \binits{A.}},
+\oauthor{\bsnm{Neumann}, \binits{G.}}:
+Deep reinforcement learning for swarm systems
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 32
+\bibitem{Lowe}
+\begin{botherref}
+\oauthor{\bsnm{Lowe}, \binits{R.}},
+\oauthor{\bsnm{Wu}, \binits{Y.}},
+\oauthor{\bsnm{Tamar}, \binits{A.}},
+\oauthor{\bsnm{Harb}, \binits{J.}},
+\oauthor{\bsnm{Abbeel}, \binits{P.}},
+\oauthor{\bsnm{Mordatch}, \binits{I.}}:
+Multi-agent actor-critic for mixed cooperative-competitive environments
+(2017)
+\end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem{Max2}
+\begin{botherref}
+\oauthor{\bsnm{Huttenrauch}, \binits{M.}}:
+{Arxiv: New paper on "Deep Reinforcement Learning for Swarm Systems" plus
+  videos and code – Computational Learning for Autonomous Systems}.
+Lincoln Center for Autonomous Systems
+(2018).
+\url{http://computational-learning.net/deep\_rl\_for\_swarms\#respond}
+Accessed 2019-03-30
+\end{botherref}
+\endbibitem
+
+%%% 34
+\bibitem{Amigo}
+\begin{botherref}
+\oauthor{\bsnm{Amigoni}, \binits{F.}},
+\oauthor{\bsnm{Visser}, \binits{A.}},
+\oauthor{\bsnm{Tsushima}, \binits{M.}},
+\oauthor{\bsnm{Chen}, \binits{X.}},
+\oauthor{\bsnm{Stone}, \binits{P.}},
+\oauthor{\bsnm{Sucar}, \binits{L.E.}},
+\oauthor{\bparticle{van~der} \bsnm{Zant}, \binits{T.}}:
+Robocup 2012 rescue simulation winners.
+RoboCup 2012: Robot Soccer World Cup XVI,
+20--35
+(2013)
+\end{botherref}
+\endbibitem
+
+%%% 35
+\bibitem{RoboCup}
+\begin{botherref}
+\oauthor{\bsnm{{RoboCup Federation}}}:
+{RoboCup Federation official website}.
+\url{https://www.robocup.org/}
+Accessed 2019-04-02
+\end{botherref}
+\endbibitem
+
+%%% 36
+\bibitem{Penders}
+\begin{barticle}
+\bauthor{\bsnm{Penders}, \binits{J.}},
+\bauthor{\bsnm{Alboul}, \binits{L.}},
+\bauthor{\bsnm{Witkowski}, \binits{U.}},
+\bauthor{\bsnm{Naghsh}, \binits{A.}},
+\bauthor{\bsnm{Saez-Pons}, \binits{J.}},
+\bauthor{\bsnm{Herbrechtsmeier}, \binits{S.}},
+\bauthor{\bsnm{El-Habbal}, \binits{M.}}:
+\batitle{A robot swarm assisting a human fire-fighter}.
+\bjtitle{Advanced Robotics}
+\bvolume{25}(\bissue{1-2}),
+\bfpage{93}--\blpage{117}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem{Murphy}
+\begin{bchapter}
+\bauthor{\bsnm{Murphy}, \binits{R.R.}},
+\bauthor{\bsnm{Tadokoro}, \binits{S.}},
+\bauthor{\bsnm{Nardi}, \binits{D.}},
+\bauthor{\bsnm{Jacoff}, \binits{A.}},
+\bauthor{\bsnm{Fiorini}, \binits{P.}},
+\bauthor{\bsnm{Choset}, \binits{H.}},
+\bauthor{\bsnm{Erkmen}, \binits{A.M.}}:
+\bctitle{Search and rescue robotics}.
+In: \bbtitle{Springer Handbook of Robotics},
+pp. \bfpage{1151}--\blpage{1173}.
+\bpublisher{Springer},
+\blocation{Berlin, Heidelberg}
+(\byear{2008})
+\end{bchapter}
+\endbibitem
+
+%%% 38
+\bibitem{Lomonaco}
+\begin{botherref}
+\oauthor{\bsnm{Lomonaco}, \binits{V.}},
+\oauthor{\bsnm{Trotta}, \binits{A.}},
+\oauthor{\bsnm{Ziosi}, \binits{M.}},
+\oauthor{\bsnm{Ávila}, \binits{J.d.D.Y.}},
+\oauthor{\bsnm{Díaz-Rodríguez}, \binits{N.}}:
+Intelligent drone swarm for search and rescue operations at sea
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 39
+\bibitem{Wilson}
+\begin{barticle}
+\bauthor{\bsnm{Wilson}, \binits{S.}},
+\bauthor{\bsnm{Buffin}, \binits{A.}},
+\bauthor{\bsnm{Pratt}, \binits{S.C.}},
+\bauthor{\bsnm{Berman}, \binits{S.}}:
+\batitle{Multi-robot replication of ant collective towing behaviours.}
+\bjtitle{Royal Society open science}
+\bvolume{5}(\bissue{10}),
+\bfpage{180409}--\blpage{180409}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem{Han}
+\begin{bchapter}
+\bauthor{\bsnm{Han}, \binits{F.}},
+\bauthor{\bsnm{Yao}, \binits{H.-F.}},
+\bauthor{\bsnm{Ling}, \binits{Q.-H.}}:
+\bctitle{An improved extreme learning machine based on particle swarm
+  optimization}.
+In: \bbtitle{Bio-Inspired Computing and Applications: 7th International
+  Conference on Intelligent Computing, ICIC 2011, Zhengzhou,China, August
+  11-14. 2011, Revised Selected Papers}.
+\bsertitle{Lecture Notes in Computer Science},
+vol. \bseriesno{6840},
+pp. \bfpage{699}--\blpage{704}.
+\bpublisher{Springer},
+\blocation{Berlin, Heidelberg}
+(\byear{2012})
+\end{bchapter}
+\endbibitem
+
+%%% 41
+\bibitem{Zhiguo2}
+\begin{bchapter}
+\bauthor{\bsnm{Zhiguo}, \binits{S.}},
+\bauthor{\bsnm{Jun}, \binits{T.}},
+\bauthor{\bsnm{Yuankai}, \binits{L.}},
+\bauthor{\bsnm{Zeying}, \binits{W.}}:
+\bctitle{Adaptive reinforcement q-learning algorithm for swarm-robot system
+  using pheromone mechanism}.
+In: \bbtitle{2013 IEEE International Conference on Robotics and Biomimetics
+  (ROBIO)},
+pp. \bfpage{952}--\blpage{957}
+(\byear{2013}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
+%%% 42
+\bibitem{Breck}
+\begin{bchapter}
+\bauthor{\bsnm{{Breck}}, \binits{E.}},
+\bauthor{\bsnm{{Cai}}, \binits{S.}},
+\bauthor{\bsnm{{Nielsen}}, \binits{E.}},
+\bauthor{\bsnm{{Salib}}, \binits{M.}},
+\bauthor{\bsnm{{Sculley}}, \binits{D.}}:
+\bctitle{The ml test score: A rubric for ml production readiness and technical
+  debt reduction}.
+In: \bbtitle{2017 IEEE International Conference on Big Data (Big Data)},
+pp. \bfpage{1123}--\blpage{1132}
+(\byear{2017}).
+doi:\doiurl{10.1109/BigData.2017.8258038}
+\end{bchapter}
+\endbibitem
+
+%%% 43
+\bibitem{Kennedy}
+\begin{bchapter}
+\bauthor{\bsnm{Kennedy}, \binits{J.}},
+\bauthor{\bsnm{Eberhart}, \binits{R.}}:
+\bctitle{Particle swarm optimization}.
+In: \bbtitle{Proceedings of ICNN'95 - International Conference on Neural
+  Networks},
+pp. \bfpage{1942}--\blpage{19484}
+(\byear{1995}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
+%%% 44
+\bibitem{PSO}
+\begin{bbook}
+\bauthor{\bsnm{Parsopoulos}, \binits{K.E.}}:
+\bbtitle{Particle Swarm Optimization and Intelligence Advances and
+  Applications}.
+\bpublisher{IGI Global (701 E. Chocolate Avenue, Hershey, Pennsylvania, 17033,
+  USA)},
+\blocation{Hershey, Pa.}
+(\byear{2010})
+\end{bbook}
+\endbibitem
+
+%%% 45
+\bibitem{Zeng}
+\begin{barticle}
+\bauthor{\bsnm{Zeng}, \binits{N.}},
+\bauthor{\bsnm{Zhang}, \binits{H.}},
+\bauthor{\bsnm{Liu}, \binits{W.}},
+\bauthor{\bsnm{Liang}, \binits{J.}},
+\bauthor{\bsnm{Alsaadi}, \binits{F.E.}}:
+\batitle{A switching delayed pso optimized extreme learning machine for
+  short-term load forecasting}.
+\bjtitle{Neurocomputing}
+\bvolume{240},
+\bfpage{175}--\blpage{182}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 46
+\bibitem{Dorigo}
+\begin{bbook}
+\bauthor{\bsnm{Dorigo}, \binits{M.}}:
+\bbtitle{Ant Colony Optimization}.
+\bpublisher{MIT Press},
+\blocation{Cambridge, Mass.}
+(\byear{2004})
+\end{bbook}
+\endbibitem
+
+%%% 47
+\bibitem{Zhiguo}
+\begin{bchapter}
+\bauthor{\bsnm{Shi}, \binits{Z.}},
+\bauthor{\bsnm{Tu}, \binits{J.}},
+\bauthor{\bsnm{Zhang}, \binits{Q.}},
+\bauthor{\bsnm{Zhang}, \binits{X.}},
+\bauthor{\bsnm{Wei}, \binits{J.}}:
+\bctitle{The improved q-learning algorithm based on pheromone mechanism for
+  swarm robot system}.
+In: \bbtitle{Proceedings of the 32nd Chinese Control Conference},
+pp. \bfpage{6033}--\blpage{6038}
+(\byear{2013}).
+\bcomment{TCCT, CAA}
+\end{bchapter}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>An Introduction to Statistical Learning with Applications in
+  R</p></title>
+  <aug>
+    <au><snm>Gareth</snm><fnm>J</fnm></au>
+    <au><snm>Witten</snm><fnm>D</fnm></au>
+    <au><snm>Hastie</snm><fnm>T</fnm></au>
+    <au><snm>Tibshirani</snm><fnm>R</fnm></au>
+  </aug>
+  <series><title><p>Springer Texts in Statistics, 103</p></title></series>
+  <pubdate>2013</pubdate>
+</bibl>
+
+<bibl id="B2">
+  <title><p>{A review of swarm robotics tasks}</p></title>
+  <aug>
+    <au><snm>Bayindir</snm><fnm>L</fnm></au>
+  </aug>
+  <source>Neurocomputing</source>
+  <pubdate>2015</pubdate>
+  <fpage>292</fpage>
+  <lpage>-321</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>{Swarm Robotics , or ' The Smartness of a bunch of cheap dumb
+  things '}</p></title>
+  <aug>
+    <au><snm>Sebastian</snm><fnm>V</fnm></au>
+  </aug>
+  <source>Next Generation Building 3</source>
+  <pubdate>2016</pubdate>
+  <volume>1</volume>
+  <fpage>487</fpage>
+  <lpage>-490</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>An extensive review of research in swarm robotics</p></title>
+  <aug>
+    <au><snm>Mohan</snm><fnm>Y</fnm></au>
+    <au><snm>Ponnambalam</snm><fnm>SG</fnm></au>
+  </aug>
+  <source>2009 World Congress on Nature \& Biologically Inspired Computing
+  (NaBIC)</source>
+  <pubdate>2009</pubdate>
+  <fpage>140</fpage>
+  <lpage>-145</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>{Swarm robotics -- from local rules to global behaviors | Magnus
+  Egerstedt | TEDxEmory}</p></title>
+  <aug>
+    <au><cnm>{TEDx}</cnm></au>
+  </aug>
+  <pubdate>2014</pubdate>
+  <url>https://www.youtube.com/watch?v=ULKyXnQ9xWA</url>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Swarm Intelligence: From Natural to Artificial Systems</p></title>
+  <aug>
+    <au><snm>Webb</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Connection Science</source>
+  <pubdate>2002</pubdate>
+  <volume>14</volume>
+  <issue>2</issue>
+  <fpage>163</fpage>
+  <lpage>-164</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Benchmark of swarm robotics distributed techniques in a search
+  task</p></title>
+  <aug>
+    <au><snm>Couceiro</snm><fnm>MS</fnm></au>
+    <au><snm>Vargas</snm><fnm>PA</fnm></au>
+    <au><snm>Rocha</snm><fnm>RP</fnm></au>
+    <au><snm>Ferreira</snm><fnm>NM</fnm></au>
+  </aug>
+  <source>Robotics and Autonomous Systems</source>
+  <publisher>Elsevier B.V.</publisher>
+  <pubdate>2014</pubdate>
+  <volume>62</volume>
+  <issue>2</issue>
+  <fpage>200</fpage>
+  <lpage>-213</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>{Distributed learning algorithms for swarm robotics}</p></title>
+  <aug>
+    <au><snm>Nedjah</snm><fnm>N</fnm></au>
+    <au><snm>{Macedo Mourelle}</snm><fnm>L</fnm></au>
+  </aug>
+  <pubdate>2015</pubdate>
+  <url>http://dx.doi.org/10.1016/j.neucom.2015.06.085</url>
+</bibl>
+
+<bibl id="B9">
+  <title><p>{Taming the swarm - Collective Artificial Intelligence | Radhika
+  Nagpal | TEDxBermuda - YouTube}</p></title>
+  <aug>
+    <au><cnm>TEDx2016</cnm></au>
+  </aug>
+  <url>https://www.youtube.com/watch?v=LHgVR0lzFJc</url>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Springer Handbook of Robotics, 2nd Edition</p></title>
+  <aug>
+    <au><snm>Siciliano</snm><fnm>B</fnm></au>
+    <au><snm>Khatib</snm><fnm>O</fnm></au>
+  </aug>
+  <publisher>Springer International Publishing</publisher>
+  <edition>2</edition>
+  <pubdate>2016</pubdate>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Distributed intelligence: overview of the field and its application
+  in multi-robot systems</p></title>
+  <aug>
+    <au><snm>Parker</snm><fnm>LE</fnm></au>
+  </aug>
+  <source>JoPha: Journal of Physical Agents</source>
+  <pubdate>2008</pubdate>
+  <volume>2</volume>
+  <issue>1</issue>
+  <fpage>5</fpage>
+  <lpage>-14</lpage>
+  <url>https://dialnet.unirioja.es/servlet/oaiart?codigo=5645537</url>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Swarm robotics search and rescue: A novel artificial
+  intelligence-inspired optimization approach</p></title>
+  <aug>
+    <au><snm>Bakhshipour</snm><fnm>M.</fnm></au>
+    <au><snm>Jabbari Ghadi</snm><fnm>M.</fnm></au>
+    <au><snm>Namdari</snm><fnm>F.</fnm></au>
+  </aug>
+  <source>Applied Soft Computing</source>
+  <publisher>Elsevier B.V.</publisher>
+  <pubdate>2017</pubdate>
+  <volume>57</volume>
+  <fpage>708</fpage>
+  <lpage>-726</lpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>{Swarm robotics: A review from the swarm engineering
+  perspective}</p></title>
+  <aug>
+    <au><snm>Brambilla</snm><fnm>M</fnm></au>
+    <au><snm>Ferrante</snm><fnm>E</fnm></au>
+    <au><snm>Birattari</snm><fnm>M</fnm></au>
+    <au><snm>Dorigo</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Swarm Intelligence</source>
+  <pubdate>2013</pubdate>
+  <volume>7</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-41</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>An Overview of Swarm Robotics for Search and Rescue
+  Applications</p></title>
+  <aug>
+    <au><snm>Couceiro</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Artificial Intelligence</source>
+  <pubdate>2017</pubdate>
+  <fpage>1522</fpage>
+  <lpage>-1561</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Why humans cooperate : a cultural and evolutionary
+  explanation</p></title>
+  <aug>
+    <au><snm>Henrich</snm><fnm>N</fnm></au>
+  </aug>
+  <publisher>Oxford, Toronto: Oxford University Press</publisher>
+  <series><title><p>Evolution and cognition</p></title></series>
+  <pubdate>2007</pubdate>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Machine Learning</p></title>
+  <aug>
+    <au><snm>Mitchell</snm><fnm>TMTM</fnm></au>
+  </aug>
+  <publisher>New York: McGraw-Hill</publisher>
+  <series><title><p>McGraw-Hill series in computer science</p></title></series>
+  <pubdate>1997</pubdate>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Introduction to machine learning</p></title>
+  <aug>
+    <au><snm>Alpaydin</snm><fnm>E</fnm></au>
+  </aug>
+  <publisher>Cambridge, Mass.: MIT Press</publisher>
+  <edition>Third edition..</edition>
+  <series><title><p>Adaptive computation and machine
+  learning</p></title></series>
+  <pubdate>2014</pubdate>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Machine learning : algorithms and applications</p></title>
+  <aug>
+    <au><snm>Mohammed</snm><fnm>M</fnm></au>
+  </aug>
+  <pubdate>2017</pubdate>
+</bibl>
+
+<bibl id="B19">
+  <title><p>An Introduction to Data Everything You Need to Know About AI, Big
+  Data and Data Science</p></title>
+  <aug>
+    <au><snm>Corea</snm><fnm>F</fnm></au>
+  </aug>
+  <series><title><p>Studies in Big Data, 50</p></title></series>
+  <pubdate>2019</pubdate>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Swarm Reinforcement Learning Method for a Multi-robot Formation
+  Problem</p></title>
+  <aug>
+    <au><snm>Iima</snm><fnm>H</fnm></au>
+    <au><snm>Kuroe</snm><fnm>Y</fnm></au>
+  </aug>
+  <source>2013 IEEE International Conference on Systems, Man, and
+  Cybernetics</source>
+  <pubdate>2013</pubdate>
+  <fpage>2298</fpage>
+  <lpage>2303</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>The Elements of Statistical Learning Data Mining, Inference, and
+  Prediction</p></title>
+  <aug>
+    <au><snm>Hastie</snm><fnm>T</fnm></au>
+  </aug>
+  <edition>Second Edition..</edition>
+  <series><title><p>Springer Series in Statistics</p></title></series>
+  <pubdate>2009</pubdate>
+</bibl>
+
+<bibl id="B22">
+  <title><p>{Swarm Robotics: Invasion of the Robot Ants - YouTube}</p></title>
+  <aug>
+    <au><cnm>{Chicago Humanities Festival}</cnm></au>
+  </aug>
+  <pubdate>2013</pubdate>
+  <url>https://www.youtube.com/watch?v=BeUT{\_}AL6t4A{\&}t=418s</url>
+</bibl>
+
+<bibl id="B23">
+  <title><p>A First Encounter with Machine Learning</p></title>
+  <aug>
+    <au><snm>Welling</snm><fnm>M</fnm></au>
+  </aug>
+  <publisher>Irvine, CA 92697, USA: University of California Irvine</publisher>
+  <pubdate>2011</pubdate>
+</bibl>
+
+<bibl id="B24">
+  <title><p>{Data Is The Foundation For Artificial Intelligence And Machine
+  Learning}</p></title>
+  <aug>
+    <au><snm>Sundblad</snm><fnm>W</fnm></au>
+  </aug>
+  <source>Forbes</source>
+  <pubdate>2019</pubdate>
+  <url>https://www.forbes.com/sites/willemsundbladeurope/2018/10/18/data-is-the-foundation-for-artificial-intelligence-and-machine-learning/?fbclid=IwAR1i3wt-4zSgMEmrsS32071KhRD-6thBftdtZdj7b1KmVN{\_}Sry21Mr2BWOY{\#}138a98db51b4</url>
+</bibl>
+
+<bibl id="B25">
+  <title><p>{Kumar Robotics}</p></title>
+  <aug>
+    <au><cnm>{Vijay Kumar}</cnm></au>
+  </aug>
+  <pubdate>2019</pubdate>
+  <url>https://www.kumarrobotics.org/research/</url>
+</bibl>
+
+<bibl id="B26">
+  <title><p>{The Future of Flying Robots | Vijay Kumar | TED Talks -
+  YouTube}</p></title>
+  <aug>
+    <au><cnm>TED</cnm></au>
+  </aug>
+  <pubdate>2015</pubdate>
+  <url>https://www.youtube.com/watch?v=ge3--1hOm1s</url>
+</bibl>
+
+<bibl id="B27">
+  <title><p>{Swarms of Aerial Robots - AMNH SciCafe - YouTube}</p></title>
+  <aug>
+    <au><cnm>{American Museum of Natural History}</cnm></au>
+  </aug>
+  <pubdate>2016</pubdate>
+  <url>https://www.youtube.com/watch?v=mUeyfLIGtLQ{\&}t=636s</url>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Robust Fruit Counting: Combining Deep Learning, Tracking, and
+  Structure from Motion</p></title>
+  <aug>
+    <au><snm>Liu</snm><fnm>X</fnm></au>
+    <au><snm>Chen</snm><fnm>SW</fnm></au>
+    <au><snm>Aditya</snm><fnm>S</fnm></au>
+    <au><snm>Sivakumar</snm><fnm>N</fnm></au>
+    <au><snm>Dcunha</snm><fnm>S</fnm></au>
+    <au><snm>Qu</snm><fnm>C</fnm></au>
+    <au><snm>Taylor</snm><fnm>CJ</fnm></au>
+    <au><snm>Das</snm><fnm>J</fnm></au>
+    <au><snm>Kumar</snm><fnm>V</fnm></au>
+  </aug>
+  <pubdate>2018</pubdate>
+</bibl>
+
+<bibl id="B29">
+  <title><p>Swarm reinforcement learning methods improving certainty of
+  learning for a multi-robot formation problem</p></title>
+  <aug>
+    <au><snm>Iima</snm><fnm>H</fnm></au>
+    <au><snm>Kuroe</snm><fnm>Y</fnm></au>
+  </aug>
+  <source>2015 IEEE Congress on Evolutionary Computation (CEC)</source>
+  <pubdate>2015</pubdate>
+  <fpage>3026</fpage>
+  <lpage>3033</lpage>
+</bibl>
+
+<bibl id="B30">
+  <title><p>MAgent: A Many-Agent Reinforcement Learning Platform for Artificial
+  Collective Intelligence</p></title>
+  <aug>
+    <au><snm>Zheng</snm><fnm>L</fnm></au>
+    <au><snm>Yang</snm><fnm>J</fnm></au>
+    <au><snm>Cai</snm><fnm>H</fnm></au>
+    <au><snm>Zhang</snm><fnm>W</fnm></au>
+    <au><snm>Wang</snm><fnm>J</fnm></au>
+    <au><snm>Yu</snm><fnm>Y</fnm></au>
+  </aug>
+  <pubdate>2017</pubdate>
+</bibl>
+
+<bibl id="B31">
+  <title><p>Deep Reinforcement Learning for Swarm Systems</p></title>
+  <aug>
+    <au><snm>Huttenrauch</snm><fnm>M</fnm></au>
+    <au><snm>SoSic</snm><fnm>A</fnm></au>
+    <au><snm>Neumann</snm><fnm>G</fnm></au>
+  </aug>
+  <pubdate>2018</pubdate>
+</bibl>
+
+<bibl id="B32">
+  <title><p>Multi-Agent Actor-Critic for Mixed Cooperative-Competitive
+  Environments</p></title>
+  <aug>
+    <au><snm>Lowe</snm><fnm>R</fnm></au>
+    <au><snm>Wu</snm><fnm>Y</fnm></au>
+    <au><snm>Tamar</snm><fnm>A</fnm></au>
+    <au><snm>Harb</snm><fnm>J</fnm></au>
+    <au><snm>Abbeel</snm><fnm>P</fnm></au>
+    <au><snm>Mordatch</snm><fnm>I</fnm></au>
+  </aug>
+  <pubdate>2017</pubdate>
+</bibl>
+
+<bibl id="B33">
+  <title><p>{Arxiv: New paper on "Deep Reinforcement Learning for Swarm
+  Systems" plus videos and code – Computational Learning for Autonomous
+  Systems}</p></title>
+  <aug>
+    <au><snm>Huttenrauch</snm><fnm>M</fnm></au>
+  </aug>
+  <publisher>Lincoln Center for Autonomous Systems</publisher>
+  <pubdate>2018</pubdate>
+  <url>http://computational-learning.net/deep\_rl\_for\_swarms\#respond</url>
+</bibl>
+
+<bibl id="B34">
+  <title><p>RoboCup 2012 Rescue Simulation Winners</p></title>
+  <aug>
+    <au><snm>Amigoni</snm><fnm>F.</fnm></au>
+    <au><snm>Visser</snm><fnm>A.</fnm></au>
+    <au><snm>Tsushima</snm><fnm>M.</fnm></au>
+    <au><snm>Chen</snm><fnm>X.</fnm></au>
+    <au><snm>Stone</snm><fnm>P.</fnm></au>
+    <au><snm>Sucar</snm><fnm>L.E.</fnm></au>
+    <au><snm>Zant</snm><fnm>T.</fnm></au>
+  </aug>
+  <source>RoboCup 2012: Robot Soccer World Cup XVI</source>
+  <pubdate>2013</pubdate>
+  <fpage>20</fpage>
+  <lpage>-35</lpage>
+</bibl>
+
+<bibl id="B35">
+  <title><p>{RoboCup Federation official website}</p></title>
+  <aug>
+    <au><cnm>{RoboCup Federation}</cnm></au>
+  </aug>
+  <url>https://www.robocup.org/</url>
+</bibl>
+
+<bibl id="B36">
+  <title><p>A Robot Swarm Assisting a Human Fire-Fighter</p></title>
+  <aug>
+    <au><snm>Penders</snm><fnm>J</fnm></au>
+    <au><snm>Alboul</snm><fnm>L</fnm></au>
+    <au><snm>Witkowski</snm><fnm>U</fnm></au>
+    <au><snm>Naghsh</snm><fnm>A</fnm></au>
+    <au><snm>Saez Pons</snm><fnm>J</fnm></au>
+    <au><snm>Herbrechtsmeier</snm><fnm>S</fnm></au>
+    <au><snm>El Habbal</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Advanced Robotics</source>
+  <pubdate>2011</pubdate>
+  <volume>25</volume>
+  <issue>1-2</issue>
+  <fpage>93</fpage>
+  <lpage>-117</lpage>
+</bibl>
+
+<bibl id="B37">
+  <title><p>Search and Rescue Robotics</p></title>
+  <aug>
+    <au><snm>Murphy</snm><fnm>RR</fnm></au>
+    <au><snm>Tadokoro</snm><fnm>S</fnm></au>
+    <au><snm>Nardi</snm><fnm>D</fnm></au>
+    <au><snm>Jacoff</snm><fnm>A</fnm></au>
+    <au><snm>Fiorini</snm><fnm>P</fnm></au>
+    <au><snm>Choset</snm><fnm>H</fnm></au>
+    <au><snm>Erkmen</snm><fnm>AM</fnm></au>
+  </aug>
+  <source>Springer Handbook of Robotics</source>
+  <publisher>Berlin, Heidelberg: Springer Berlin Heidelberg</publisher>
+  <pubdate>2008</pubdate>
+  <fpage>1151</fpage>
+  <lpage>-1173</lpage>
+</bibl>
+
+<bibl id="B38">
+  <title><p>Intelligent Drone Swarm for Search and Rescue Operations at
+  Sea</p></title>
+  <aug>
+    <au><snm>Lomonaco</snm><fnm>V</fnm></au>
+    <au><snm>Trotta</snm><fnm>A</fnm></au>
+    <au><snm>Ziosi</snm><fnm>M</fnm></au>
+    <au><snm>Ávila</snm><fnm>JdDY</fnm></au>
+    <au><snm>Díaz Rodríguez</snm><fnm>N</fnm></au>
+  </aug>
+  <pubdate>2018</pubdate>
+</bibl>
+
+<bibl id="B39">
+  <title><p>Multi-robot replication of ant collective towing
+  behaviours.</p></title>
+  <aug>
+    <au><snm>Wilson</snm><fnm>S</fnm></au>
+    <au><snm>Buffin</snm><fnm>A</fnm></au>
+    <au><snm>Pratt</snm><fnm>SC</fnm></au>
+    <au><snm>Berman</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Royal Society open science</source>
+  <pubdate>2018</pubdate>
+  <volume>5</volume>
+  <issue>10</issue>
+  <fpage>180409</fpage>
+  <lpage>-180409</lpage>
+  <url>http://search.proquest.com/docview/2138046497/</url>
+</bibl>
+
+<bibl id="B40">
+  <title><p>An Improved Extreme Learning Machine Based on Particle Swarm
+  Optimization</p></title>
+  <aug>
+    <au><snm>Han</snm><fnm>F</fnm></au>
+    <au><snm>Yao</snm><fnm>HF</fnm></au>
+    <au><snm>Ling</snm><fnm>QH</fnm></au>
+  </aug>
+  <source>Bio-Inspired Computing and Applications: 7th International Conference
+  on Intelligent Computing, ICIC 2011, Zhengzhou,China, August 11-14. 2011,
+  Revised Selected Papers</source>
+  <publisher>Berlin, Heidelberg: Springer Berlin Heidelberg</publisher>
+  <series><title><p>Lecture Notes in Computer Science</p></title></series>
+  <pubdate>2012</pubdate>
+  <volume>6840</volume>
+  <fpage>699</fpage>
+  <lpage>-704</lpage>
+</bibl>
+
+<bibl id="B41">
+  <title><p>Adaptive reinforcement Q-Learning algorithm for swarm-robot system
+  using pheromone mechanism</p></title>
+  <aug>
+    <au><snm>Zhiguo</snm><fnm>S</fnm></au>
+    <au><snm>Jun</snm><fnm>T</fnm></au>
+    <au><snm>Yuankai</snm><fnm>L</fnm></au>
+    <au><snm>Zeying</snm><fnm>W</fnm></au>
+  </aug>
+  <source>2013 IEEE International Conference on Robotics and Biomimetics
+  (ROBIO)</source>
+  <pubdate>2013</pubdate>
+  <fpage>952</fpage>
+  <lpage>957</lpage>
+</bibl>
+
+<bibl id="B42">
+  <title><p>The ML test score: A rubric for ML production readiness and
+  technical debt reduction</p></title>
+  <aug>
+    <au><snm>{Breck}</snm><fnm>E.</fnm></au>
+    <au><snm>{Cai}</snm><fnm>S.</fnm></au>
+    <au><snm>{Nielsen}</snm><fnm>E.</fnm></au>
+    <au><snm>{Salib}</snm><fnm>M.</fnm></au>
+    <au><snm>{Sculley}</snm><fnm>D.</fnm></au>
+  </aug>
+  <source>2017 IEEE International Conference on Big Data (Big Data)</source>
+  <pubdate>2017</pubdate>
+  <fpage>1123</fpage>
+  <lpage>1132</lpage>
+</bibl>
+
+<bibl id="B43">
+  <title><p>Particle swarm optimization</p></title>
+  <aug>
+    <au><snm>Kennedy</snm><fnm>J</fnm></au>
+    <au><snm>Eberhart</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Proceedings of ICNN'95 - International Conference on Neural
+  Networks</source>
+  <pubdate>1995</pubdate>
+  <fpage>1942</fpage>
+  <lpage>1948vol.4</lpage>
+</bibl>
+
+<bibl id="B44">
+  <title><p>Particle swarm optimization and intelligence advances and
+  applications</p></title>
+  <aug>
+    <au><snm>Parsopoulos</snm><fnm>KE</fnm></au>
+  </aug>
+  <publisher>Hershey, Pa.: IGI Global (701 E. Chocolate Avenue, Hershey,
+  Pennsylvania, 17033, USA)</publisher>
+  <pubdate>2010</pubdate>
+</bibl>
+
+<bibl id="B45">
+  <title><p>A switching delayed PSO optimized extreme learning machine for
+  short-term load forecasting</p></title>
+  <aug>
+    <au><snm>Zeng</snm><fnm>N.</fnm></au>
+    <au><snm>Zhang</snm><fnm>H.</fnm></au>
+    <au><snm>Liu</snm><fnm>W.</fnm></au>
+    <au><snm>Liang</snm><fnm>J.</fnm></au>
+    <au><snm>Alsaadi</snm><fnm>F.E.</fnm></au>
+  </aug>
+  <source>Neurocomputing</source>
+  <publisher>Elsevier B.V.</publisher>
+  <pubdate>2017</pubdate>
+  <volume>240</volume>
+  <fpage>175</fpage>
+  <lpage>-182</lpage>
+</bibl>
+
+<bibl id="B46">
+  <title><p>Ant colony optimization</p></title>
+  <aug>
+    <au><snm>Dorigo</snm><fnm>M</fnm></au>
+  </aug>
+  <publisher>Cambridge, Mass.: MIT Press</publisher>
+  <pubdate>2004</pubdate>
+</bibl>
+
+<bibl id="B47">
+  <title><p>The improved Q-Learning algorithm based on pheromone mechanism for
+  swarm robot system</p></title>
+  <aug>
+    <au><snm>Shi</snm><fnm>Z</fnm></au>
+    <au><snm>Tu</snm><fnm>J</fnm></au>
+    <au><snm>Zhang</snm><fnm>Q</fnm></au>
+    <au><snm>Zhang</snm><fnm>X</fnm></au>
+    <au><snm>Wei</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Proceedings of the 32nd Chinese Control Conference</source>
+  <pubdate>2013</pubdate>
+  <fpage>6033</fpage>
+  <lpage>6038</lpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment

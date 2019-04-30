@@ -1,0 +1,13 @@
+python3   -m pip install  numpy scipy matplotlib scikit-image scikit-learn ipython pandas
+============
+
+chmod 775 '/home/mun/'
+chmod +x 'canopy-2.1.9.rh6-x86_64-cp35.sh'
+bash canopy-2.1.9.rh6-x86_64-cp35.sh
+
+
+
+==============
+latex
+
+https://dzone.com/articles/installing-latex-ubuntu

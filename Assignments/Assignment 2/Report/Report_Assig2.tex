@@ -1,0 +1,221 @@
+
+
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+\documentclass{article}  
+\twocolumn
+
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{adjustbox}
+\usepackage{authblk}
+\usepackage{pbox}
+\usepackage{float}
+\usepackage[margin=1in]{geometry}
+\author[1]{Dalia Ibrahim}
+\author[2]{Carlos Dasaed Salcedo}
+
+
+{
+    \makeatletter
+    \renewcommand\AB@affilsepx{: \protect\Affilfont}
+    \makeatother
+        
+        
+
+    \affil[ ]{Studnet ID}
+
+    \makeatletter
+    \renewcommand\AB@affilsepx{, \protect\Affilfont}
+    \makeatother
+
+    \affil[1]{201893217}
+    \affil[2]{201892008}
+    
+        \makeatletter
+\setlength{\floatsep}{5pt}
+\setlength{\textfloatsep}{5pt}
+    \makeatother
+    
+}
+
+\begin{document}  
+
+\title{ Assignment 2: Choosing the Best Parameters to Use for a Binary KNN classifier using on 5-fold cross-validation}
+
+
+\maketitle
+ \section{Introduction}
+For this assignment, we have implemented a cross-fold validation algorithm from scratch using Python and the following libraries: pandas, numpy, math, random, and sys. To improve the efficiency of the algorithm, unsupervised filtering was also used based on the correlation matrix and variances of the data using sklearn libraries. The other sklearn libraries included in the final program were used to calculate KNN, and related precision metrics. To run the program, the following line must be executed from the command line in Linux: \\
+\$python3 A2\_t2.py [DataFile.tsv]\\
+
+ \section{ Preliminary Steps - Feature Selection }
+feature selection\\
+cross correlation\\
+low variance \\
+
+ \section{Main Pseudo-code}
+This section only includes the functions that are relevant and currently being used by the algorithm. Functions, such as the ones from sklearn, will only be mentioned in the pseudo-code, but will not be individually described.
+ \subsection{FoldSplitter()}
+
+\begin{algorithm}[H]
+\caption{FoldSplitter Function}
+\begin{algorithmic}[1]
+\REQUIRE kfolds  \COMMENT{kfolds = 5 was used}
+\STATE $ data \gets dataframe(DataFile.tsv)$
+\STATE $ class0 \gets $  data.where(class=0).ShuffleRows() 
+\STATE $ class0partition \gets  Rows In class0 / kfolds $
+\STATE $ class1 \gets $ data.where(class=1).ShuffleRows()
+\STATE $ class1partition \gets  Rows In class1 / kfolds $
+\STATE $ leftOvers0 \gets $class0 rows after(class0partition * cvfolds)]
+\STATE $ leftOvers1 \gets $class1 rows after(class1partition * cvfolds)]
+\STATE $ leftOvers \gets  concatenation(leftOvers0,leftOvers1)$
+\STATE $ theFolds \gets newPythonDictionary$
+	\FOR { i=0 \textbf{to} kfolds-1 }
+        \STATE  $create fold\textbf{i} $ \COMMENT{i = corresponding iteration in the for cycle} 
+      	\STATE $class0Range \gets $class0[\textbf{from} i * class0partition \textbf{to} (i * class0partition)+class0Partition  
+      	\STATE $class1Range \gets$ class1[\textbf{from} i * class1partition \textbf{to} (i * class1partition)+class1Partition   
+
+      	\STATE $TempOutput \gets Calculate\_Nearest\_Neighbors(BotKPerTest, K)$
+      	\STATE $FinalOutput.append(TempOutput)$ 
+      	\STATE $print(FinalOutput)$  
+      \ENDFOR
+      \STATE $FinalOutput.csv \gets FinalOutput $
+\end{algorithmic}
+\end{algorithm}
+
+ \subsection{EuclideanDistance()}
+\begin{algorithm}[H]
+\caption{Euclidean Distance Function}
+\begin{algorithmic}[1]
+\REQUIRE trainRow , testRow 
+\STATE $ Summation \gets 0	 $
+	\FOR { i \textbf{in} range(NumFeatures) } 
+        \STATE $d \gets trainRow[i] - testRow[i]$
+        \STATE $Summation \gets Summation + d^{2}$
+  	\ENDFOR
+\STATE $Distance \gets [SQRT(Summation) , trainRow[LastValue] ]$  
+\STATE return Distance
+
+\end{algorithmic}
+\end{algorithm}
+
+
+ \subsection{Calculate\_Nearest\_neighbour()}
+ 
+\begin{algorithm}[H]
+\caption{Calculate Nearest Neighbor Function}
+\begin{algorithmic}[1]
+\REQUIRE topMatched , K 
+	%\IF{$topMatched[0].distance == 0 $}
+	  %  \STATE $ FinalOutput \gets [topMatched.class, 1.00] $ 
+	   % \STATE return FinalOutput
+	%\ENDIF
+	\STATE $TieBreaker \gets NewDataframe()$
+	\STATE $TieBreaker \gets UniqueRandomNumbers()$
+	\STATE $topMatched.CreateColumn('Count') \gets Count('Class')$
+	\STATE $concatenate(topMatched, TieBreaker)$
+	\STATE $topMatched = topMatched.Filter( 'Count' = Count.Max())$
+	\STATE $topMatched.sortBy('tieBreaker')$
+	\STATE $TopMatch \gets topMatched.row(0) $ 
+	\STATE $Probability \gets \frac{topMatch[Count]}{ K}$
+	\STATE $ FinalOutput \gets [TopMatch[Class], Probability)] $ 
+    \STATE $return FinalOutput$
+       
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\section{Deciding on Performance}  
+
+Since there are several different performance metrics that can be used to determine how good an algorithm will perform, we decided to use the AUC of the ROC curve \\
+
+To prevent possible ties, random numbers without repetition are generated and assigned to each of the selected closest neighbors. In the case of a tie in the number of votes, the class of the neighbor with the smallest random number would be selected. \\ The following modifications were implemented and tested in an effort to improve the algorithm.
+\begin{enumerate}
+\item Normalization of the training and testing data
+\item Addition of weights to the neighbors to improve voting in the selection of the closest neighbor
+\item Normalization and Addition of weights together.
+\end{enumerate}
+
+ \section{Results}
+To validate the accuracy of our algorithm, we used crossed validation with the help of the sklearn library. These are the steps we followed to implement Cross Validation and test our code:
+ \begin{enumerate}
+	\item Shuffle the data using  $ trainingdata.sample()$ function from sklearn Library 
+	\item Split the data using $ trainTestSplit$ function in the sklearn Library and make the testing part equal to $40 \%$  of the total training data.
+	\item Calculate average accuracy  by  comparing actual data with the predicated data, and then applying the formula in (1)
+	\begin{equation}
+	Accuracy = \frac{CorrectPredicted}{AllOutputs}
+	\end{equation} 
+	\item  Generate a report with Precision and Recall using the $classificationReport$ function from the sklearn Library
+	\item Repeat all pervious steps for Kfold = 5
+ \end{enumerate}
+ \section{Conclusion} 
+ 
+ 
+ 
+ Table \ref{tab:AccuarcyTable} shows the results of running  KNN with serveral modifications, and K=3.   
+ 
+ 
+\setlength{\tabcolsep}{0.9em} % for the horizontal padding
+{\renewcommand{\arraystretch}{1.5}% 
+\begin{table}[H]
+
+\begin{tabular}{|c|c|}
+\hline 
+\textbf{Method}                    & \textbf{Accuracy}  \\ \hline
+Classical KNN                      & 85.00\%                    
+\\ \hline
+  \pbox{100cm}{\textbf{Classical KNN} \\ \textbf{with TieBreaker}\\} & \textbf{100\%}                      \\\hline
+KNN Weighted                       & 84\%                       \\ \hline
+Normalized KNN                     & 91.00\%                    \\ \hline
+Normalize KNN Weighted             & 79.00\%      
+\\ \hline             
+\end{tabular}
+\caption{\label{tab:AccuarcyTable}Accuracy calculated using sklearn.}
+\end{table}
+}
+
+\section{Conclusion}
+Since we were using the sklearn to validate our results, we were able to generate a table to compare the accuracy of the results of the algorithm as we made and applied the different modifications. However, to our surprise, Classical KNN with a tie breaker function added yielded accuracy reaches up to $100\%$. Normalizing the data and adding weights actually reduced our accuracy to $79\%$. 
+ 
+ 
+ \section{Appendix}
+
+
+  
+ 
+ \begin{adjustbox}{angle=90}
+%\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+ & \multicolumn{6}{c}{\textbf{Class}}                                                                                                                                                                                                                                                                                                                                                                                                                                    & \\ \hline
+\multicolumn{1}{c}{K=3}         & \textbf{1}                                                               & \textbf{2}                                                               & \textbf{3}                                                               & \textbf{5}                                                                 & \textbf{6}                                                                 & \textbf{7}                                                                 & \textbf{Accurcy} \\ \hline
+
+Classical KNN     & \begin{tabular}[c]{@{}l@{}}Pre = 79\%\\ Recall = 85\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 88\%\\ Recall = 90\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 67\%\\ Recall = 40\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 40\%\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 80\%\\ Recall = 80\%\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 91\%\end{tabular}  & 85.00\%                 \\  \hline
+
+
+KNN Weighted      & \begin{tabular}[c]{@{}l@{}}Pre =75\%\\ Recall = 81\%\end{tabular}  & \begin{tabular}[c]{@{}l@{}} Pre = 93\%\\Recall = 83\% \end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 57\%\\ Recall = 67\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 91\%\\ Recall = 91\%\end{tabular}   & 84.00\%                 \\  \hline
+
+
+Normalized KNN   & \begin{tabular}[c]{@{}l@{}}Pre = 92\%\\ Recall = 89\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 91\% \\Recall = 94\%                                           \end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 60\%\\ Recall = 60\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \textbf{91.00\%}        \\ \hline
+
+
+\pbox{20cm}{Normalize KNN \\Weighted}  & \begin{tabular}[c]{@{}l@{}}Pre = 71\%\\ Recall = 87\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 89\% \\Recall = 74\%                                           \end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 60\%\\ Recall = 43\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 75\%\\ Recall = 100\%\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 50\%\\ Recall = 67\%\end{tabular}   & 
+\begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 79\%\end{tabular} & \text{79.00\%} 
+
+
+\\
+\hline 
+ \pbox{20cm}{\textbf{Classical KNN} \\ \textbf{with TieBreaker}}    & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular} & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Pre = 100\%\\ Recall = 100\%\end{tabular}  & \textbf{100.00\%}  \\  \hline
+
+         
+\end{tabular}
+%\end{table}
+\end{adjustbox}
+
+
+
+\end{document}
